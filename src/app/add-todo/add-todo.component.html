@@ -1,0 +1,12 @@
+<div class="add-todo-wrap">
+  <input #addtodo type="text" placeholder="Add todo" (keyup)="handleTodo($event)">
+  <button (click)="addTodo(addtodo)">Add</button>
+</div>
+<div class="todoes">
+  <div *ngFor="let todo of todoes; let i = index" class="todo-item">
+    <div class="todo-info">
+      <span class="todo-counter">{{i+1}}</span><span class="todo-title">{{todo}}</span>
+    </div>
+    <button class="done" (click)="deleteTodo($event)"><i class="fa fa-check"></i></button>
+  </div>
+</div>
